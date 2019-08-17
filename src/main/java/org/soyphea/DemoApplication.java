@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Arrays;
 
-import static org.soyphea.Singer.*;
+import static org.soyphea.MySinger.*;
 
 @SpringBootApplication
 public class DemoApplication implements CommandLineRunner {
@@ -26,14 +26,14 @@ public class DemoApplication implements CommandLineRunner {
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }
-    
+
     @Override
     public void run(String... args) throws Exception {
 
         redisUtil.saveCache();
         logger.info("List all the singer/song:{}",redisUtil.findAllSinger());
         logger.info("Song by singer:{}",redisUtil.findSongBySinger(PREAP_SOVATH));
-        logger.info("Song by multi singer:{}",redisUtil.findSongByMultiSinger(Arrays.asList(Singer.PREAP_SOVATH,Singer.SHEERAN)));
+        logger.info("Song by multi singer:{}",redisUtil.findSongByMultiSinger(Arrays.asList(MySinger.PREAP_SOVATH, MySinger.SHEERAN)));
 
     }
 }

@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Set;
 
 @Service
 public class RedisUtil {
@@ -29,8 +28,8 @@ public class RedisUtil {
 
     public void saveCache(){
         logger.info("Save....");
-        hashOperations.put("SONG",Singer.PREAP_SOVATH, Arrays.asList("Shap Of You","Photograph"));
-        hashOperations.put("SONG",Singer.SHEERAN, Arrays.asList("Songsa 1 Khae 2 Khae","Thnom"));
+        hashOperations.put("SONG", MySinger.PREAP_SOVATH, Arrays.asList("Shap Of You","Photograph"));
+        hashOperations.put("SONG", MySinger.SHEERAN, Arrays.asList("Songsa 1 Khae 2 Khae","Thnom"));
     }
     public Object findAllSinger(){
         return hashOperations.values("SONG");
