@@ -9,5 +9,5 @@ import java.util.List;
 public interface SongRepository extends CrudRepository<Song,String> {
 
 
-    List<Song> findBySingerName(String singerName);
+   List findBySingerName(String singerName);
 }
